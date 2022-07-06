@@ -52,10 +52,6 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /.s?css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
-      },
     ],
   },
   plugins: [
@@ -66,11 +62,7 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new MiniCssExtractPlugin()
   ],
-  optimization: {
-    minimizer: [new CssMinimizerPlugin(), '...'],
-  },
   performance: {
     hints: false,
     maxEntrypointSize: 512000,
