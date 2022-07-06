@@ -2,15 +2,13 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
     mode: 'development',
     devServer: {
         historyApiFallback: true,
         static: {
-            directory: path.join(__dirname, './build'),
+            directory: path.join(__dirname, './src'),
           },
         open: true,
         compress: true,
@@ -56,11 +54,11 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'webpack Boilerplate',
+      title: 'IVM',
       template: path.resolve(__dirname, './src/index.html'), // template file
       filename: 'index.html', // output file
     }),
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ],
   performance: {

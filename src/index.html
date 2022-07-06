@@ -10,10 +10,13 @@
     <script type="text/javascript">
         var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
         s1.async = true;
-        s1.src = './main.js';
+        s1.src = './app.js';
         s1.charset = 'UTF-8';
         s1.setAttribute('crossorigin', '*');
         s0.parentNode.insertBefore(s1, s0);
+        s1.onload = ()=>{
+            window.init()
+        }
     </script>
     <!--End of IVM Script-->
 </head>
